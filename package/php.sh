@@ -65,7 +65,7 @@ if [ ${install_redis} ]; then
 	# 切换到包下载目录
 	cd ${PACKDIR}
 	if [ ! -f "redis.zip" ]; then
-	    wget -c https://github.com/nicolasff/phpredis/archive/master.zip -O redis.zip
+	    wget -c --no-check-certificate https://github.com/nicolasff/phpredis/archive/master.zip -O redis.zip
 	fi;
 	rm -rf phpredis-master
 	unzip redis.zip
@@ -82,7 +82,7 @@ if;
 if [ ${install_yaf} ]; then
 	# 切换到包下载目录
 	cd ${PACKDIR}
-	wget -c --tries=3 https://github.com/laruence/php-yaf
+	wget -c --tries=3  --no-check-certificate https://github.com/laruence/php-yaf
 	cd php-yaf
 	/usr/local/bin/phpize
 	./configure --with-php-config=/usr/bin/php-config
@@ -99,6 +99,7 @@ if [ ${install_xhprof} ]; then
 	if [ ! -f "xhprof.zip" ]; then
 	    wget -c http://jh.59.hk:8888/soft/xhprof-0.9.4.tgz -O xhprof.zip
 	fi;
+
 	rm -rf xhprof-master
 	unzip xhprof.zip
 	cd xhprof-master/extension
