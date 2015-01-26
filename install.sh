@@ -53,6 +53,8 @@ echo "nginx version is $NGINXVERSION"
 echo "redis client is $REDISVERSION"
 echo "install dir is $APPDIR"
 
+sleep(1)
+
 echo "[Notice] confirm install WebServer? please select: (1 or 2)"
 
 select selected in 'install' 'exit'; do break; done;
@@ -64,7 +66,7 @@ echo "installing..........."
 chmod u+x  ./package/check.sh  ./package/php.sh  ./package/nginx.sh ./package/mysql.sh
 
 # check and install base moudule
-./package/check.sh || exit $?
+./package/check.sh
 
 # 清除已经安装过得服务
 yum -y remove httpd
