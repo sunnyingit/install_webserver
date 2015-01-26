@@ -13,7 +13,7 @@ if;
 # 删除原有的PHP代码
 rm -rf ${PHPVERSION}
 # 解压源码包
-tar zxf ${PHPVERSION}.tar.bz2
+tar -jxf ${PHPVERSION}.tar.bz2
 # 切换到源码目录
 cd ${PHPVERSION}
 ./configure 
