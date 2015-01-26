@@ -59,6 +59,8 @@ select selected in 'install' 'exit'; do break; done;
 	
 echo "installing..........."
 
+sleep(1)
+
 chmod u+x  ./package/check.sh  ./package/php.sh  ./package/nginx.sh ./package/mysql.sh
 
 # check and install base moudule
