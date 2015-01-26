@@ -33,9 +33,6 @@ install_redis=true
 install_yaf=true
 install_xhprof=true
 
-# php的yaf扩展
-YAFVERSION='php-yaf'
-
 export PHPDIR PHPCONFIGDIR PHPBIN NGINXDIR PHPVERSION MYSQLVERSION  MYSQLVSHORATERSION MYSQLDIR MYSQLDATA NGINXVERSION REDISVERSION
 
 # 创建安装目录
@@ -51,7 +48,6 @@ echo "php version is $PHPVERSION"
 echo "mysql version is $MYSQLVERSION"
 echo "nginx version is $NGINXVERSION"
 echo "redis client is $REDISVERSION"
-echo "install dir is $APPDIR"
 
 sleep(1)
 
