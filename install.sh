@@ -49,8 +49,6 @@ echo "mysql version is $MYSQLVERSION"
 echo "nginx version is $NGINXVERSION"
 echo "redis client is $REDISVERSION"
 
-sheep(1)
-
 echo "[Notice] confirm install WebServer? please select: (1 or 2)"
 
 select selected in 'install' 'exit'; do break; done;
