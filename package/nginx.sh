@@ -45,7 +45,7 @@ source $UPROFILE
 echo "[OK] ${NGINXVERSION} install completed."
 
 echo "Program will display Nginx Version......"
-sleep(1)
+sleep 1
 
 # 查看nginx的版本
 /usr/local/nginx/sbin/nginx -v
