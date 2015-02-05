@@ -1,5 +1,5 @@
 #!/bin/bash
-# 适合在centos下安装webserver环境，包括php mysql nignx  php的redis扩展
+#	 适合在centos下安装webserver环境，包括php mysql nignx  php的redis扩展
 WORKDIR=$PWD
 # 下载的包的目录
 PACKDIR=/data/packages
@@ -49,7 +49,7 @@ echo "mysql version is $MYSQLVERSION"
 echo "nginx version is $NGINXVERSION"
 echo "redis client is $REDISVERSION"
 
-sleep(1)
+sheep(1)
 
 echo "[Notice] confirm install WebServer? please select: (1 or 2)"
 
@@ -58,8 +58,6 @@ select selected in 'install' 'exit'; do break; done;
 [ "$selected" == 'exit' ] && echo 'exit install.' && exit;
 	
 echo "installing..........."
-
-sleep(1)
 
 chmod u+x  ./package/check.sh  ./package/php.sh  ./package/nginx.sh ./package/mysql.sh
 
@@ -85,20 +83,20 @@ useradd -s /sbin/nologin -M -g mysql mysql
 ./package/php.sh 
 
 # install nginx
-./package/nignx.sh 
+#./package/nignx.sh 
 
 # install mysql
-./package/mysql.sh
+#./package/mysql.sh
 
 # test php
-[ $(php-fpm -t | grep 'successful' | wc -l) > 1 ]  && echo "php-fpm test ok"
-[ $(php-fpm -m | grep 'redis' | wc -l) > 1 ]  && echo "php redis module test ok"
+#[ $(php-fpm -t | grep 'successful' | wc -l) > 1 ]  && echo "php-fpm test ok"
+#[ $(php-fpm -m | grep 'redis' | wc -l) > 1 ]  && echo "php redis module test ok"
 
 # test nginx
-[ $(nginx -V | grep 'nginx' | wc -l) > 1 ]  && echo "php-fpm test ok"
+#[ $(nginx -V | grep 'nginx' | wc -l) > 1 ]  && echo "php-fpm test ok"
 
 # test mysql
-mysql start
+#mysql start
 
-echo Done
+echo 'Done'
 
