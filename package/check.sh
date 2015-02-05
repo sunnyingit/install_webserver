@@ -2,7 +2,7 @@
 # 检测环境，安装必备的模块
 
 # 检测root 权限
-[ $(id -u) != '0'] && echo "[Error] please install with root user" && exit
+[ $(id -u) != '0' ] && echo "[Error] please install with root user" && exit
 
 egrep -i "centos" /etc/issue && sysName='centos';
 egrep -i "debian" /etc/issue && sysName='debian';
