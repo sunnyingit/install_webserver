@@ -7,9 +7,11 @@ echo "Installing ${PHPVERSION} *****************"
 sleep 1
 
 wget -c --tries=3 http://cn2.php.net/distributions/${PHPVERSION}.tar.bz2
+
 if [ $? != 0 ]; then
 	echo "Download ${PHPVERSION}.tar.gz failed!" && exit
-if;
+fi
+
 # 删除原有的PHP代码
 rm -rf ${PHPVERSION}
 # 解压源码包
