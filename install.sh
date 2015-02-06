@@ -1,5 +1,6 @@
 #!/bin/bash
-#	 适合在centos下安装webserver环境，包括php mysql nignx  php的redis扩展
+# 安装lnmp环境
+# email:sunliwodewy@163.com
 WORKDIR=$PWD
 # 下载的包的目录
 PACKDIR=/data/packages
@@ -12,6 +13,8 @@ PHPDIR=/opt/server/php
 PHPCONFIGDIR=/opt/config/php
 # 软连接PHP的安装目录
 PHPBIN=/opt/php
+
+
 # nignx的安装目录
 NGINXDIR=/opt/server/nignx
 # 软连接ngnix的安装目录
@@ -24,6 +27,7 @@ MYSQLDATA=/data/mysql
 
 # 填写需要安装的版本
 PHPVERSION='php-5.5.5'
+PHPVERSION='5.5.20'
 MYSQLVERSION='mysql-5.6.20'
 MYSQLVSHORATERSION='5.6'
 NGINXVERSION='nginx-1.6.2'
