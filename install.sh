@@ -63,7 +63,7 @@ echo "installing..........."
 chmod u+x  ./package/check.sh  ./package/php.sh  ./package/nginx.sh ./package/mysql.sh
 
 # check and install base moudule
-#./package/check.sh
+./package/check.sh
 
 # 清除已经安装过得服务
 yum -y remove httpd
@@ -84,7 +84,7 @@ useradd -s /sbin/nologin -M -g mysql mysql
 ./package/php.sh 
 
 # install nginx
-./package/nignx.sh 
+#./package/nignx.sh 
 
 # install mysql
 #./package/mysql.sh
