@@ -84,7 +84,7 @@ useradd -s /sbin/nologin -M -g mysql mysql
 ./package/php.sh 
 
 # install nginx
-#./package/nignx.sh 
+./package/nignx.sh 
 
 # install mysql
 #./package/mysql.sh

@@ -21,7 +21,7 @@ rm -rf ${PHP_INFO}
 tar -jxf ${PHP_INFO}.tar.bz2
 # 切换到源码目录
 cd ${PHP_INFO}
-./configure  --prefix=${PHPDIR} --with-mysql=mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-zlib --with-zlib-dir --with-curl --with-gettext --with-gd --with-freetype-dir --with-jpeg-dir --with-png-dir --with-openssl --with-iconv --with-pcre-dir --with-mcrypt --with-xmlrpc --enable-ftp --enable-mbstring --enable-soap --enable-sockets --enable-fpm --enable-zip --disable-debug --enable-calendar --enable-static --enable-inline-optimization --enable-maintainer-zts --enable-wddx --with-config-file-path=${PHPCONFIGDIR} > /tmp/php_install.log
+./configure  --prefix=${PHPDIR} --with-mysql=mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-zlib --with-zlib-dir --with-curl --with-gettext --with-gd --with-freetype-dir --with-jpeg-dir --with-png-dir --with-openssl --with-iconv --with-pcre-dir --with-mcrypt --with-xmlrpc  --enable-mbstring --enable-soap --enable-sockets --enable-fpm --enable-zip --disable-debug --enable-calendar --enable-static --enable-inline-optimization --enable-maintainer-zts --enable-wddx --with-config-file-path=${PHPCONFIGDIR} > /tmp/php_install.log
 
 [ $? != 0 ] && echo "configure 错误，安装失败！" && exit
 make  >> /tmp/php_install.log
