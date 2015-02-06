@@ -16,6 +16,12 @@ fi
 
 # 删除原有的PHP代码
 rm -rf ${PHP_INFO}
+
+# 创建安装路径目录
+mkdir -p ${PHPDIR}
+# 创建php配置指定目录
+mkdir -p ${PHPCONFIGDIR}
+
 # 解压源码包
 tar -jxf ${PHP_INFO}.tar.bz2
 # 切换到源码目录
@@ -78,8 +84,6 @@ if [ ${install_redis} ]; then
 			echo "Download phpredis failed!" && exit
 		fi
 	fi;
-
-
 	rm -rf phpredis-master
 	unzip redis.zip
 	cd phpredis-master
