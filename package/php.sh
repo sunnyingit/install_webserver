@@ -21,32 +21,7 @@ rm -rf ${PHP_INFO}
 tar -jxf ${PHP_INFO}.tar.bz2
 # 切换到源码目录
 cd ${PHP_INFO}
-./configure 
- --enable-fpm \
- --with-fpm-user=www \
- --with-fpm-group=www \
- --with-mysql=mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd \
- --with-iconv-dir --with-freetype-dir \
- --with-jpeg-dir \
- --with-png-dir \
- --with-zlib \
- --with-libxml-dir=/usr \
- --enable-xml\
- --enable-discard-path \
- --enable-magic-quotes \
- --enable-safe-mode \
- --enable-bcmath \
- --enable-shmop \
- --enable-sysvsem \
- --enable-inline-optimization \
- --with-curl --enable-mbregex \
- --enable-fastcgi \
- --enable-fpm \
- --enable-force-cgi-redirect \
- --enable-mbstring --with-mcrypt --enable-ftp --with-gd \
- --enable-gd-native-ttf --with-openssl --with-mhash --enable-pcntl  \
- --enable-sockets --with-xmlrpc --enable-zip --enable-soap \
- --without-pear --with-gettext --with-mime-magic >> /tmp/php_install.log
+./configure  --prefix=${PHPDIR} --with-mysql=mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-zlib --with-zlib-dir --with-curl --with-gettext --with-gd --with-freetype-dir --with-jpeg-dir --with-png-dir --with-openssl --with-iconv --with-pcre-dir --with-mcrypt --with-xmlrpc --enable-ftp --enable-mbstring --enable-soap --enable-sockets --enable-fpm --enable-zip --disable-debug --enable-calendar --enable-static --enable-inline-optimization --enable-maintainer-zts --enable-wddx --with-config-file-path=${PHPCONFIGDIR} > /tmp/php_install.log
 
 [ $? != 0 ] && echo "configure 错误，安装失败！" && exit
 make  >> /tmp/php_install.log
