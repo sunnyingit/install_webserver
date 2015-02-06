@@ -26,7 +26,6 @@ MYSQLDIR=/opt/mysql
 MYSQLDATA=/data/mysql
 
 # 填写需要安装的版本
-PHPVERSION='php-5.5.5'
 PHPVERSION='5.5.20'
 MYSQLVERSION='mysql-5.6.20'
 MYSQLVSHORATERSION='5.6'

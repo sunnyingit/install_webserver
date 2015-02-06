@@ -3,12 +3,15 @@
 # 
 # 切换到下载包目录
 cd $PACKDIR
-PHP_INFO="php-${PHP_INFO}"
+PHP_INFO="php-${PHPVERSION}"
 echo "Installing ${PHP_INFO} *****************"
-wget -c --tries=3 http://cn2.php.net/distributions/${PHP_INFO}.tar.bz2
 
-if [ $? != 0 ]; then
-	echo "Download ${PHP_INFO}.tar.gz failed!" && exit
+if [ ! -f "${PHP_INFO}.tar.bz2" ]; then
+	wget -c --tries=3 http://cn2.php.net/distributions/${PHP_INFO}.tar.bz2
+
+	if [ $? != 0 ]; then
+		echo "Download ${PHP_INFO}.tar.gz failed!" && exit
+	fi
 fi
 
 # 删除原有的PHP代码
@@ -116,7 +119,7 @@ if [ ${install_xhprof} ]; then
 	cd ${PACKDIR}
 	if [ ! -f "xhprof.zip" ]; then
 	    wget -c http://jh.59.hk:8888/soft/xhprof-0.9.4.tgz -O xhprof.zip
-	    
+
 		if [ $? != 0 ]; then
 			echo "Download xhprof failed!" && exit
 		fi
