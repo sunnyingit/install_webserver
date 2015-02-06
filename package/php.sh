@@ -17,17 +17,12 @@ fi
 # 删除原有的PHP代码
 rm -rf ${PHP_INFO}
 
-# 创建安装路径目录
-mkdir -p ${PHPDIR}
-# 创建php配置指定目录
-mkdir -p ${PHPCONFIGDIR}
-
 # 解压源码包
 tar -jxf ${PHP_INFO}.tar.bz2
 # 切换到源码目录
 cd ${PHP_INFO}
 ./configure 
- --prefix=${PHPDIR}
+ --prefix=${PHPDIR} \
  --with-config-file-path=${PHPCONFIGDIR} \
  --enable-fpm \
  --with-fpm-user=www \
