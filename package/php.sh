@@ -22,8 +22,6 @@ tar -jxf ${PHP_INFO}.tar.bz2
 # 切换到源码目录
 cd ${PHP_INFO}
 ./configure 
- --prefix=/opt/server/php\
- --with-config-file-path=/opt/config/php\
  --enable-fpm \
  --with-fpm-user=www \
  --with-fpm-group=www \
